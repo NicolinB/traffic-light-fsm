@@ -1,0 +1,30 @@
+# Quartus Settings File — traffic_light_fsm
+# Target: DE10-Lite (MAX10 10M50DAF484C7G)
+
+set_global_assignment -name FAMILY "MAX 10"
+set_global_assignment -name DEVICE 10M50DAF484C7G
+set_global_assignment -name TOP_LEVEL_ENTITY traffic_light_fsm
+set_global_assignment -name VHDL_FILE traffic_light_fsm.vhd
+set_global_assignment -name VHDL_VERSION VHDL_1993
+
+# ── Pin assignments ──────────────────────────────────────────
+
+set_location_assignment PIN_P11 -to MAX10_CLK1_50
+
+# Keys (active low)
+set_location_assignment PIN_B8 -to KEY[0]
+set_location_assignment PIN_A7 -to KEY[1]
+
+# LEDs: [0]=RED  [1]=YELLOW  [2]=GREEN
+set_location_assignment PIN_A8  -to LEDR[0]
+set_location_assignment PIN_A9  -to LEDR[1]
+set_location_assignment PIN_A10 -to LEDR[2]
+set_location_assignment PIN_B10 -to LEDR[3]
+set_location_assignment PIN_D13 -to LEDR[4]
+set_location_assignment PIN_C13 -to LEDR[5]
+set_location_assignment PIN_E14 -to LEDR[6]
+set_location_assignment PIN_D14 -to LEDR[7]
+set_location_assignment PIN_A11 -to LEDR[8]
+set_location_assignment PIN_B11 -to LEDR[9]
+
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_WEAK_PULLUP "AS INPUT TRI-STATED"
